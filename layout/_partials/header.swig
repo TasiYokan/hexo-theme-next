@@ -80,8 +80,8 @@
       {% include 'search.swig' %}
     </div>
   {% endif %}
-</nav>
 
+  
 {% if is_post() %}
   <div class="site-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
@@ -129,5 +129,7 @@
   </nav>
   </p>
 {% endif %}
+</nav>
+
 
 {% include '../_custom/header.swig' %}
