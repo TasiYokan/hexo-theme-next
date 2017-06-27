@@ -46,10 +46,10 @@ index_with_subtitle: false
 menu:
   home: /
   categories: /categories/
-  about: /about/
+  # about: /about/
   archives: /archives/
   tags: /tags/
-  sitemap: /sitemap.xml
+  # sitemap: /sitemap.xml
   #commonweal: /404.html
 
 
@@ -284,7 +284,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: custom color
 
 
 # ---------------------------------------------------------------
