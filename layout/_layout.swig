@@ -56,6 +56,13 @@
           <span id="scrollpercent"><span>0</span>%</span>
         {% endif %}
       </div>
+
+      <div class="expand-toc">
+        <i class="fa fa-arrow-down"></i>
+        {% if theme.sidebar.scrollpercent %}
+          <span id="scrollpercent"><span>0</span>%</span>
+        {% endif %}
+      </div>
     {% endif %}
 
   </div>

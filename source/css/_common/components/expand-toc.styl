@@ -1,0 +1,29 @@
+.expand-toc {
+  box-sizing: border-box;
+  position: fixed;
+  top: $btoc-position-top;
+  right: $btoc-position-right;
+  z-index: $zindex-5;
+  padding: 0 6px;
+  width: hexo-config('sidebar.scrollpercent') ? initial : 24px;
+  background: $btoc-bg-color;
+  font-size: $btoc-font-size;
+  opacity: $btoc-opacity;
+  color: $btoc-color;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+  transition-property: top;
+  the-transition();
+
+  +mobile() {
+    display: block;
+  }
+  +tablet() {
+    display: block;
+  }
+
+  &.expand-toc-on {
+    bottom: btoc-position-top-on;
+  }
+}
