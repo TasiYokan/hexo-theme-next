@@ -1,4 +1,5 @@
 {% macro render(is_post) %}
+{% if is_post %}
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
       <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -158,4 +159,11 @@
 
     </div>
   </aside>
+{% else %}
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+      <p> Some lists maybe </p>
+    </div>
+  </aside>
+{% endif %}
 {% endmacro %}

@@ -82,7 +82,7 @@
   {% endif %}
 
   
-{% if is_post() %}
+{% if true %}
   <div class="site-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
           src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}"
