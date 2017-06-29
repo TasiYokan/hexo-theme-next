@@ -80,45 +80,6 @@ NexT.utils = NexT.$u = {
     });
   },
 
-  registerExpandToc: function() {
-    var $btoc = $('.expand-toc');
-
-    $btoc.on('click', function () {
-      // $('body').velocity('scroll');
-      var ON_CLASS_NAME = 'expand-toc-on';
-      var isTocOn = $btoc.hasClass(ON_CLASS_NAME);
-      $btoc.toggleClass('expand-toc-on', !isTocOn);
-      // console.log("expand! " + $btoc.hasClass(ON_CLASS_NAME));
-      var $sideb = $('.sidebar-inner');
-
-      // console.log("has side bar "+ $sideb.hasClass('affix-top')+" "+$('.sidebar').css("display"));
-      // console.log("A "+($btoc.hasClass(ON_CLASS_NAME) && $sideb.hasClass('affix-top')));
-      // console.log("B "+(!$btoc.hasClass(ON_CLASS_NAME) && $sideb.hasClass('affix')));
-      if($btoc.hasClass(ON_CLASS_NAME))
-      {
-        // $('.sidebar').css('display', 'block !important');
-        
-        var cssText = $(".sidebar").attr("style") + ";display:block !important;";
-        $(".sidebar").css("cssText", cssText);
-
-        $sideb.toggleClass('affix-top', false);
-        $sideb.toggleClass('affix', true);
-      }
-      else if(!$btoc.hasClass(ON_CLASS_NAME) && (window.screen.width < 992))
-      {
-        // $('.sidebar').css('display', 'none !important');
-
-        var cssText = $(".sidebar").attr("style") + ";display:none !important;";
-        $(".sidebar").css("cssText", cssText);
-
-        $sideb.toggleClass('affix-top', true);
-        $sideb.toggleClass('affix', false);
-      }
-      // $(".sidebar").css('display','block'); 
-      // console.log("sidebar "+$('.sidebar').css("display"));
-    });
-  },
-
   /**
    * Transform embedded video to support responsive layout.
    * @see http://toddmotto.com/fluid-and-responsive-youtube-and-vimeo-videos-with-fluidvids-js/
@@ -227,6 +188,10 @@ NexT.utils = NexT.$u = {
     return !this.isTablet() && !this.isMobile();
   },
 
+  isMinic: function() {
+    return window.innerWidth < 992;
+  },
+
   /**
    * Escape meta symbols in jQuery selectors.
    *
@@ -269,5 +234,56 @@ NexT.utils = NexT.$u = {
    */
   needAffix: function () {
     return this.isPisces();
+  },
+
+  registerExpandToc: function() {
+    var $btoc = $('.expand-toc');
+
+    $btoc.on('click', function () {
+      // $('body').velocity('scroll');
+      var ON_CLASS_NAME = 'expand-toc-on';
+      var isTocOn = $btoc.hasClass('expand-toc-on');
+      $btoc.toggleClass('expand-toc-on', !isTocOn);
+      // if($btoc.hasClass('expand-toc-on'))
+      // {
+      //   console.log("expanded has open");
+      // }
+      // else
+      // {
+      //   console.log("expanded has close");
+      // }
+
+      var $sideb = $('.sidebar-inner');
+
+      // console.log("has side bar "+ $sideb.hasClass('affix-top')+" "+$('.sidebar').css("display"));
+      // console.log("A "+($btoc.hasClass(ON_CLASS_NAME) && $sideb.hasClass('affix-top')));
+      // console.log("B "+(!$btoc.hasClass(ON_CLASS_NAME) && $sideb.hasClass('affix')));
+      if($btoc.hasClass('expand-toc-on') && (NexT.utils.isMinic()))
+      {
+        // $('.sidebar').css('display', 'block !important');
+        
+        var cssText = $(".sidebar").attr("style") + ";display:block !important;";
+        $(".sidebar").css("cssText", cssText);
+
+        $sideb.toggleClass('affix-top', false);
+        $sideb.toggleClass('affix', true);
+
+        console.log("display");
+      }
+      else if(!$btoc.hasClass('expand-toc-on') && (NexT.utils.isMinic()))
+      {
+        // $('.sidebar').css('display', 'none !important');
+
+        var cssText = $(".sidebar").attr("style") + ";display:none !important;";
+        $(".sidebar").css("cssText", cssText);
+
+        $sideb.toggleClass('affix-top', true);
+        $sideb.toggleClass('affix', false);
+
+        console.log("hide");
+      }
+      // $(".sidebar").css('display','block'); 
+      // console.log("sidebar "+$('.sidebar').css("display"));
+    });
   }
 };

@@ -39,6 +39,11 @@ $(document).ready(function () {
       headerHeight;
     /*jshint camelcase: true */
 
+    if(NexT.utils.isMinic())
+    {
+      sidebarTop = -100; //FIXME: hardcoded
+    }
+
     $('.sidebar-inner').affix({
       offset: {
         top: sidebarTop,
@@ -79,6 +84,40 @@ $(document).ready(function () {
   }
 
 });
+
+$(window).resize(function(){
+  console.log("resize");
+    var headerHeight = $('.header-inner').height();
+    var footerOffset = parseInt($('.main').css('padding-bottom'), 10);
+
+    /*jshint camelcase: false */
+    var sidebarTop = (CONFIG.sidebar.offset_float === 0) ?
+      headerHeight + CONFIG.sidebar.offset :
+      headerHeight;
+    /*jshint camelcase: true */
+
+    if(NexT.utils.isMinic())
+    {
+      sidebarTop = -100; //FIXME: hardcoded
+    }
+
+    $('.sidebar-inner').affix({
+      offset: {
+        top: sidebarTop,
+        bottom: footerOffset
+      }
+    });
+
+    $(document)
+      .on('affixed.bs.affix', function () {
+        updateTOCHeight(document.body.clientHeight - 100);
+      });
+
+    function updateTOCHeight (height) {
+      height = height || 'auto';
+      $('.post-toc').css('max-height', height);
+    }
+})
 
 $(document).ready(function () {
   var html = $('html');

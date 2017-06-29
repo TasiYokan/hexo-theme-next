@@ -22,6 +22,15 @@
   &.affix {
     position: fixed;
     top: $sidebar-offset-float;
+    +mobile() {
+      top: 100px; //FIXME: hardcoded, won't refresh responsively
+    }
+    +tablet() {
+      top: 100px; //FIXME: hardcoded, won't refresh responsively
+    }
+    +desktop() { 
+      top: $sidebar-offset-float;
+    }
   }
 }
 

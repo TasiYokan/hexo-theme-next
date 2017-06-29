@@ -16,6 +16,10 @@
   transition-property: top;
   the-transition();
 
+  +desktop() { 
+    display: none !important; //Hide it when in desktop
+  }
+
   +mobile() {
     display: block;
   }
