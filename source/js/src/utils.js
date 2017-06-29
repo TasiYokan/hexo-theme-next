@@ -265,8 +265,8 @@ NexT.utils = NexT.$u = {
         var cssText = $(".sidebar").attr("style") + ";display:block !important;";
         $(".sidebar").css("cssText", cssText);
 
-        $sideb.toggleClass('affix-top', false);
-        $sideb.toggleClass('affix', true);
+        // $sideb.toggleClass('affix-top', false);
+        // $sideb.toggleClass('affix', true);
 
         console.log("display");
       }
@@ -277,8 +277,8 @@ NexT.utils = NexT.$u = {
         var cssText = $(".sidebar").attr("style") + ";display:none !important;";
         $(".sidebar").css("cssText", cssText);
 
-        $sideb.toggleClass('affix-top', true);
-        $sideb.toggleClass('affix', false);
+        // $sideb.toggleClass('affix-top', true);
+        // $sideb.toggleClass('affix', false);
 
         console.log("hide");
       }

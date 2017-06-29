@@ -8,6 +8,13 @@
   // Do NOT delete this line
   // or Affix (position: fixed) will not work in Google Chrome.
   -webkit-transform: none;
+
+  +mobile() {
+    right: 0px; // Make toc dock to the right side on mobile
+  }
+  +tablet() {
+    right: 0px;
+  }
 }
 
 
@@ -19,14 +26,25 @@
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 
+  +mobile() {
+    box-shadow: 0 0 3px #555;
+  }
+  +tablet() {
+    box-shadow: 0 0 3px #555;
+  }
+
+  &.affix-top {
+      // top: -10px;
+  }
+
   &.affix {
     position: fixed;
     top: $sidebar-offset-float;
     +mobile() {
-      top: 100px; //FIXME: hardcoded, won't refresh responsively
+      top: 20px; //FIXME: hardcoded, won't refresh responsively
     }
     +tablet() {
-      top: 100px; //FIXME: hardcoded, won't refresh responsively
+      top: 20px; //FIXME: hardcoded, won't refresh responsively
     }
     +desktop() { 
       top: $sidebar-offset-float;

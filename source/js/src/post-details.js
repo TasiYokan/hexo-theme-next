@@ -41,7 +41,7 @@ $(document).ready(function () {
 
     if(NexT.utils.isMinic())
     {
-      sidebarTop = -100; //FIXME: hardcoded
+      sidebarTop = 6; //FIXME: hardcoded
     }
 
     $('.sidebar-inner').affix({
@@ -98,7 +98,7 @@ $(window).resize(function(){
 
     if(NexT.utils.isMinic())
     {
-      sidebarTop = -100; //FIXME: hardcoded
+      sidebarTop = 6; //FIXME: hardcoded
     }
 
     $('.sidebar-inner').affix({
