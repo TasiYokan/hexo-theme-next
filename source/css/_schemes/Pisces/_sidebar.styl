@@ -4,6 +4,7 @@
   display: none;
   right: auto;
   bottom: auto;
+  the-transition();
 
   // Do NOT delete this line
   // or Affix (position: fixed) will not work in Google Chrome.
@@ -14,6 +15,15 @@
   }
   +tablet() {
     right: 0px;
+  }
+
+  &.sidebar-hide {
+    +mobile() {
+      right: -300px;
+    }
+    +tablet() {
+      right: -300px;
+    }
   }
 }
 

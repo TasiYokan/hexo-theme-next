@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar sidebar-hide">
     <div class="sidebar-inner">
 
       {% set display_toc = is_post and theme.toc.enable or is_page and theme.toc.enable %}
@@ -160,7 +160,7 @@
     </div>
   </aside>
 {% else %}
-  <aside id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar sidebar-hide">
     <div class="sidebar-inner">
       <p> Some lists maybe </p>
     </div>

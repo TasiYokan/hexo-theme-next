@@ -237,13 +237,27 @@ NexT.utils = NexT.$u = {
   },
 
   registerExpandToc: function() {
+    var THRESHOLD = 50;
     var $btoc = $('.expand-toc');
+
+    $(window).on('scroll', function () {
+      $btoc.toggleClass('expand-toc-on', window.pageYOffset > THRESHOLD);
+
+      if(window.pageYOffset < THRESHOLD && (NexT.utils.isMinic()))
+      {
+        // console.log("hide when reach top");
+        // var cssText = $(".sidebar").attr("style") + ";display:none !important;";
+        // $(".sidebar").css("cssText", cssText);
+        $(".sidebar").toggleClass("sidebar-hide", true);
+        $btoc.toggleClass('expand-toc-enable', false);
+      }
+    });
 
     $btoc.on('click', function () {
       // $('body').velocity('scroll');
-      var ON_CLASS_NAME = 'expand-toc-on';
-      var isTocOn = $btoc.hasClass('expand-toc-on');
-      $btoc.toggleClass('expand-toc-on', !isTocOn);
+      var ON_CLASS_NAME = 'expand-toc-enable';
+      var isTocOn = $btoc.hasClass('expand-toc-enable');
+      $btoc.toggleClass('expand-toc-enable', !isTocOn);
       // if($btoc.hasClass('expand-toc-on'))
       // {
       //   console.log("expanded has open");
@@ -255,32 +269,25 @@ NexT.utils = NexT.$u = {
 
       var $sideb = $('.sidebar-inner');
 
-      // console.log("has side bar "+ $sideb.hasClass('affix-top')+" "+$('.sidebar').css("display"));
-      // console.log("A "+($btoc.hasClass(ON_CLASS_NAME) && $sideb.hasClass('affix-top')));
-      // console.log("B "+(!$btoc.hasClass(ON_CLASS_NAME) && $sideb.hasClass('affix')));
-      if($btoc.hasClass('expand-toc-on') && (NexT.utils.isMinic()))
+      if($btoc.hasClass('expand-toc-enable') && (NexT.utils.isMinic()))
       {
         // $('.sidebar').css('display', 'block !important');
         
-        var cssText = $(".sidebar").attr("style") + ";display:block !important;";
-        $(".sidebar").css("cssText", cssText);
+        // var cssText = $(".sidebar").attr("style") + ";display:block !important;";
+        // $(".sidebar").css("cssText", cssText);
+        $(".sidebar").toggleClass("sidebar-hide", false);
 
-        // $sideb.toggleClass('affix-top', false);
-        // $sideb.toggleClass('affix', true);
-
-        console.log("display");
+        // console.log("display");
       }
-      else if(!$btoc.hasClass('expand-toc-on') && (NexT.utils.isMinic()))
+      else if(!$btoc.hasClass('expand-toc-enable') && (NexT.utils.isMinic()))
       {
         // $('.sidebar').css('display', 'none !important');
 
-        var cssText = $(".sidebar").attr("style") + ";display:none !important;";
-        $(".sidebar").css("cssText", cssText);
+        // var cssText = $(".sidebar").attr("style") + ";display:none !important;";
+        // $(".sidebar").css("cssText", cssText);
+        $(".sidebar").toggleClass("sidebar-hide", true);
 
-        // $sideb.toggleClass('affix-top', true);
-        // $sideb.toggleClass('affix', false);
-
-        console.log("hide");
+        // console.log("hide");
       }
       // $(".sidebar").css('display','block'); 
       // console.log("sidebar "+$('.sidebar').css("display"));
