@@ -160,10 +160,10 @@
     </div>
   </aside>
 {% else %}
-  <aside id="sidebar" class="sidebar sidebar-hide">
+  <!--<aside id="sidebar" class="sidebar sidebar-hide">
     <div class="sidebar-inner">
       <p> Some lists maybe </p>
     </div>
-  </aside>
+  </aside>-->
 {% endif %}
 {% endmacro %}

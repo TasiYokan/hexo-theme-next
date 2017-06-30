@@ -32,6 +32,14 @@
   {{ sidebar_template.render(true) }}
 {% endblock %}
 
+{% block expand-toc %}
+  <div class="expand-toc">
+    <i class="fa fa-list-ol"></i>
+    {% if theme.sidebar.scrollpercent %}
+      <span id="scrollpercent"><span>0</span>%</span>
+    {% endif %}
+  </div>
+{% endblock %}
 
 {% block script_extra %}
   {% include '_scripts/pages/post-details.swig' %}
