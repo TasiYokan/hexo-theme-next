@@ -8,13 +8,19 @@
 
   // Do NOT delete this line
   // or Affix (position: fixed) will not work in Google Chrome.
-  -webkit-transform: none;
+  //-webkit-transform: none;
 
   +mobile() {
     right: 0px; // Make toc dock to the right side on mobile
+    -webkit-transform: translateZ(0);
   }
   +tablet() {
     right: 0px;
+    -webkit-transform: translateZ(0);
+  }
+  +desktop() {
+    right: auto;
+    -webkit-transform: none;
   }
 
   &.sidebar-hide {
@@ -51,10 +57,10 @@
     position: fixed;
     top: $sidebar-offset-float;
     +mobile() {
-      top: 20px; //FIXME: hardcoded, won't refresh responsively
+      top: -80px; //FIXME: hardcoded, won't refresh responsively
     }
     +tablet() {
-      top: 20px; //FIXME: hardcoded, won't refresh responsively
+      top: -80px; //FIXME: hardcoded, won't refresh responsively
     }
     +desktop() { 
       top: $sidebar-offset-float;
