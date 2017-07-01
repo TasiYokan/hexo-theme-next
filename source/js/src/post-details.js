@@ -86,7 +86,6 @@ $(document).ready(function () {
 });
 
 $(window).resize(function(){
-  console.log("resize");
     var headerHeight = $('.header-inner').height();
     var footerOffset = parseInt($('.main').css('padding-bottom'), 10);
 

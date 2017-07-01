@@ -196,7 +196,7 @@ $(document).ready(function () {
       $brand.size() > 0 && sequence.push({
         e: $brand,
         p: {opacity: 1},
-        o: {duration: 200}
+        o: {duration: 22}
       });
 
       NexT.utils.isMist() && hasElement([$logoLineTop, $logoLineBottom]) &&
@@ -208,13 +208,13 @@ $(document).ready(function () {
       hasElement($title) && sequence.push({
         e: $title,
         p: {opacity: 1, top: 0},
-        o: { duration: 200 }
+        o: { duration: 22 }
       });
 
       hasElement($subtitle) && sequence.push({
         e: $subtitle,
         p: {opacity: 1, top: 0},
-        o: {duration: 200}
+        o: {duration: 22}
       });
 
       if (sequence.length > 0) {
@@ -254,8 +254,8 @@ $(document).ready(function () {
     menu: function (integrator) {
       $('.menu-item').velocity('transition.slideDownIn', {
         display: null,
-        duration: 200,
-        complete: function () {
+        duration: 500,
+        begin: function () {
           integrator.next();
         }
       });
@@ -269,7 +269,7 @@ $(document).ready(function () {
 
       function postMotion () {
         var postMotionOptions = window.postMotionOptions || {
-            stagger: 100,
+            stagger: 2,
             drag: true
           };
         postMotionOptions.complete = function () {

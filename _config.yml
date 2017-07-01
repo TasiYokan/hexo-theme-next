@@ -247,8 +247,8 @@ post_meta:
 # Post wordcount display settings
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
-  item_text: true
-  wordcount: true
+  item_text: false
+  wordcount: false
   min2read: false
   separated_meta: true
 
@@ -260,7 +260,7 @@ post_wordcount:
 
 # Declare license on posts
 post_copyright:
-  enable: true
+  enable: false
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -425,6 +425,7 @@ leancloud_visitors:
 busuanzi_count:
   # count values only if the other configs are false
   enable: true
+  footer_enable: false
   # custom uv span for the whole site
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i>
@@ -435,7 +436,7 @@ busuanzi_count:
   site_pv_footer:
   # custom pv span for one page only
   page_pv: true
-  page_pv_header: <i class="fa fa-eye">本文阅读</i>
+  page_pv_header: <i class="fa fa-eye"></i>
   page_pv_footer:
 
 
