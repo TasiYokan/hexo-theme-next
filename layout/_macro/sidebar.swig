@@ -8,6 +8,7 @@
     </div>
   </div>
 
+  {% if  toc(page.content).length >= 1 %}
   <aside id="sidebar" class="sidebar sidebar-hide">
     <div class="sidebar-inner">
 
@@ -159,6 +160,7 @@
 
     </div>
   </aside>
+  {% endif %}
 {% else %}
   <!--<aside id="sidebar" class="sidebar sidebar-hide">
     <div class="sidebar-inner">
