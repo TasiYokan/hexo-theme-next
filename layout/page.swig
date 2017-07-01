@@ -17,6 +17,10 @@
 
 {% block content %}
 
+{% if page.type === "tags" || page.type === 'categories' %}
+  <div class="post-general-bg">
+{% endif %}
+
   <div id="posts" class="posts-expand">
   {% include '_partials/page-header.swig' %}
     {# tagcloud page support #}
@@ -42,6 +46,10 @@
       {{ page.content }}
     {% endif %}
   </div>
+
+{% if page.type === "tags" || page.type === 'categories' %}
+  </div>
+{% endif %}
 
 {% endblock %}
 

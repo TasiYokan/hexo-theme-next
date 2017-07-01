@@ -5,7 +5,7 @@
 {% block title %}{{ __('title.category') }}: {{ page.category }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-
+  <div class="post-general-bg">
   <section id="posts" class="posts-collapse">
     <div class="collection-title">
       <{% if theme.seo %}h2{% else %}h1{% endif %}>{#
@@ -18,6 +18,7 @@
       {{ post_template.render(post) }}
     {% endfor %}
   </section>
+  </div>
 
   {% include '_partials/pagination.swig' %}
 

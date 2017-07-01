@@ -8,6 +8,7 @@
 
 {% block content %}
 
+  <div class="post-general-bg">
   <section id="posts" class="posts-collapse">
     <span class="archive-move-on"></span>
 
@@ -42,8 +43,9 @@
       {{ post_template.render(post) }}
 
     {% endfor %}
-
+    
   </section>
+  </div>
 
   {% include '_partials/pagination.swig' %}
 
