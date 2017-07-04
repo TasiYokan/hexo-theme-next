@@ -230,6 +230,7 @@ save_scroll: false
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
+hide_description_in_post: true
 
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
@@ -250,7 +251,7 @@ post_wordcount:
   item_text: false
   wordcount: false
   min2read: false
-  separated_meta: true
+  separated_meta: false
 
 # Wechat Subscriber
 #wechat_subscriber:

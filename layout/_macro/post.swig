@@ -246,7 +246,7 @@
             </div>
           {% endif %}
 
-          {% if post.description and (not theme.excerpt_description or not is_index) %}
+          {% if post.description and (not theme.excerpt_description or not is_index) and (not theme.hide_description_in_post) %}
               <div class="post-description">
                   {{ post.description }}
               </div>
