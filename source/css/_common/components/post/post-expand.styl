@@ -32,6 +32,10 @@
         padding-right: 10px;
       }
     }
+
+    a {
+      color: #fff;
+    }
   }
 }
 
@@ -84,6 +88,19 @@
     padding: 3px;
     border: 1px solid $gray-lighter;
   }
+
+  a {
+    color: $orange;
+  }
+}
+
+.posts-expand .post-body {
+    .btn {
+      color: $read-more-color;
+    }
+    .btn:hover {
+      @extend .btn:hover;
+    }
 }
 
 .posts-expand .fancybox img { margin: 0 auto; }
