@@ -22,6 +22,7 @@ authoricon: heart
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
 
+
 # ---------------------------------------------------------------
 # SEO Settings
 # ---------------------------------------------------------------
@@ -38,6 +39,7 @@ seo: false
 # subtitle: Subtitle
 index_with_subtitle: false
 
+
 # ---------------------------------------------------------------
 # Menu Settings
 # ---------------------------------------------------------------
@@ -51,7 +53,6 @@ menu:
   tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
-
 
 # Enable/Disable menu icons.
 # Icon Mapping:
@@ -71,8 +72,6 @@ menu_icons:
   commonweal: heartbeat
 
 
-
-
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -84,58 +83,8 @@ scheme: Pisces
 
 
 # ---------------------------------------------------------------
-# Font Settings
-# - Find fonts on Google Fonts (https://www.google.com/fonts)
-# - All fonts set here will have the following styles:
-#     light, light italic, normal, normal italic, bold, bold italic
-# - Be aware that setting too much fonts will cause site running slowly
-# - Introduce in 5.0.1
-# ---------------------------------------------------------------
-font:
-  enable: true
-
-  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
-  host:
-
-  # Global font settings used on <body> element.
-  global:
-    # external: true will load this font family from host.
-    external: true
-    family: Lato
-
-  # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
-  # Fallback to `global` font settings.
-  headings:
-    external: true
-    family:
-
-  # Font settings for posts
-  # Fallback to `global` font settings.
-  posts:
-    external: true
-    family:
-
-  # Font settings for Logo
-  # Fallback to `global` font settings.
-  # The `size` option use `px` as unit
-  logo:
-    external: true
-    family:
-    size:
-
-  # Font settings for <code> and code blocks.
-  codes:
-    external: true
-    family:
-    size:
-
-
-
-
-# ---------------------------------------------------------------
 # Sidebar Settings
 # ---------------------------------------------------------------
-
 
 # Social Links
 # Key is the link label showing to end users.
@@ -144,7 +93,6 @@ font:
   #LinkLabel: Link
   #iissnan: https://github.com/iissnan
   #baidu: http://baidu.com
-
 
 # Social Links Icons
 # Icon Mapping:
@@ -159,12 +107,17 @@ social_icons:
   Twitter: twitter
   Weibo: weibo
 
+# Blog rolls
+#links_title: Links
+#links_layout: block
+#links_layout: inline
+#links:
+  #Title: http://example.com/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
 avatar: /images/avatar.png
-
 
 # Table Of Contents in the Sidebar
 toc:
@@ -176,13 +129,11 @@ toc:
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: false
 
-
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 #creative_commons: by-nc-sa
 #creative_commons:
-
 
 sidebar:
   # Sidebar Position, available value: left | right
@@ -208,16 +159,9 @@ sidebar:
 
   # Scroll percent label in b2t button
   scrollpercent: false
+  
   # Enable sidebar on narrow view
   onmobile: true
-
-
-# Blog rolls
-#links_title: Links
-#links_layout: block
-#links_layout: inline
-#links:
-  #Title: http://example.com/
 
 
 # ---------------------------------------------------------------
@@ -268,7 +212,6 @@ post_copyright:
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
 
-
 # ---------------------------------------------------------------
 # Misc Theme Settings
 # ---------------------------------------------------------------
@@ -288,6 +231,53 @@ custom_logo:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: custom color
+
+
+# ---------------------------------------------------------------
+# Font Settings
+# - Find fonts on Google Fonts (https://www.google.com/fonts)
+# - All fonts set here will have the following styles:
+#     light, light italic, normal, normal italic, bold, bold italic
+# - Be aware that setting too much fonts will cause site running slowly
+# - Introduce in 5.0.1
+# ---------------------------------------------------------------
+font:
+  enable: true
+
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
+  host:
+
+  # Global font settings used on <body> element.
+  global:
+    # external: true will load this font family from host.
+    external: true
+    family: Lato
+
+  # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
+  # Fallback to `global` font settings.
+  headings:
+    external: true
+    family:
+
+  # Font settings for posts
+  # Fallback to `global` font settings.
+  posts:
+    external: true
+    family:
+
+  # Font settings for Logo
+  # Fallback to `global` font settings.
+  # The `size` option use `px` as unit
+  logo:
+    external: true
+    family:
+    size:
+
+  # Font settings for <code> and code blocks.
+  codes:
+    external: true
+    family:
+    size:
 
 
 # ---------------------------------------------------------------
@@ -487,6 +477,10 @@ local_search:
   # show top n results per article, show all results by setting to -1
   top_n_per_article: 1
 
+
+# ---------------------------------------------------------------
+# Tags Settings
+# ---------------------------------------------------------------
 # External URL with BASE64 encrypt & decrypt
 # Usage: {% exturl text url "title" %}
 # Alias: {% extlink text url "title" %}
