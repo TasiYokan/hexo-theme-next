@@ -10,6 +10,7 @@
 
   {% if  toc(page.content).length >= 1 %}
   <aside id="sidebar" class="sidebar sidebar-hide">
+    <div id="sidebar-dimmer"></div>
     <div class="sidebar-inner">
 
       {% set display_toc = is_post and theme.toc.enable or is_page and theme.toc.enable %}
