@@ -128,6 +128,35 @@
     {% endif %}
   </nav>
   </p>
+
+  {% if theme.rss %}
+  <div class="feed-link">
+    <a href="{{ url_for(theme.rss) }}" rel="alternate">
+      <i class="fa fa-rss"></i>
+      RSS
+    </a>
+  </div>
+  {% endif %}
+
+  {% if theme.social %}
+  <div class="links-of-author">
+    <span class="site-author-name">
+      <!-- <p>友情链接</p> -->
+    </span>
+    {% for name, link in theme.social %}
+    <span class="links-of-author-item">
+      <a href="{{ link }}" target="_blank" title="{{ name }}">
+        {% if theme.social_icons.enable %}
+        <i class="fa fa-fw fa-{{ theme.social_icons[name] | default('globe') | lower }}"></i>
+        {% endif %}
+        {{ name }}
+      </a>
+    </span>
+    {% endfor %}
+  </div>
+  </p>
+  {% endif %}
+
 {% endif %}
 </nav>
 
