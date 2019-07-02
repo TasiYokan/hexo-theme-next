@@ -39,6 +39,7 @@
     <ul id="menu" class="menu">
       {% for name, path in theme.menu %}
         {% set itemName = name.toLowerCase() %}
+        {% if (itemName !== "archives") %}
         <li class="menu-item menu-item-{{ itemName }}">
           <a href="{{ url_for(path) }}" rel="section">
             {% if theme.menu_icons.enable %}
@@ -47,6 +48,7 @@
             {{ __('menu.' + name) }}
           </a>
         </li>
+        {% endif %}
       {% endfor %}
       <!-- {% set itemName = "home" %}
       <li class="menu-item menu-item-{{ itemName }}">
