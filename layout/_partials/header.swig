@@ -37,7 +37,7 @@
 
   {% if theme.menu %}
     <ul id="menu" class="menu">
-      <!--{% for name, path in theme.menu %}
+      {% for name, path in theme.menu %}
         {% set itemName = name.toLowerCase() %}
         <li class="menu-item menu-item-{{ itemName }}">
           <a href="{{ url_for(path) }}" rel="section">
@@ -47,8 +47,8 @@
             {{ __('menu.' + name) }}
           </a>
         </li>
-      {% endfor %}-->
-      {% set itemName = "home" %}
+      {% endfor %}
+      <!-- {% set itemName = "home" %}
       <li class="menu-item menu-item-{{ itemName }}">
         <a href="{{ url_for("/") }}" rel="section">
           {% if theme.menu_icons.enable %}
@@ -56,7 +56,7 @@
           {% endif %}
           {{ __('menu.' + "home") }}
         </a>
-      </li>
+      </li> -->
 
       {% if hasSearch %}
         <li class="menu-item menu-item-search">
@@ -154,7 +154,6 @@
     </span>
     {% endfor %}
   </div>
-  </p>
   {% endif %}
 
 {% endif %}
