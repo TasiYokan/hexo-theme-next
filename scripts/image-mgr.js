@@ -20,6 +20,19 @@ hexo.extend.tag.register('tencent', function (args) {
     return ' <img src="' + src + '" alt="' + alt + '" title="' + title + '">';
 });
 
+hexo.extend.tag.register('video', function (args) {
+    var slug = args.shift();
+    if (!slug) return;
+
+    var src = "/videos/" + slug;
+    var title = args.length ? args.shift() : '';
+    var alt = args.length ? args.shift() : '';
+
+    // return ' <iframe width=500 src="' + src + '" alt="' + alt + '" title="' + title + '" frameborder=0 allowfullscreen></iframe>';
+    return '<video width="100%" height="400" src="' + src + '" controls="controls"> The`<video>` tag is not supported by your browser. </video >'
+});
+
+
 hexo.extend.tag.register('local_test', function (args) {
     var slug = args.shift();
     if (!slug) return;
