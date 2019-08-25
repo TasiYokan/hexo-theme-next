@@ -20,6 +20,17 @@ hexo.extend.tag.register('tencent', function (args) {
     return ' <img src="' + src + '" alt="' + alt + '" title="' + title + '">';
 });
 
+hexo.extend.tag.register('external', function (args) {
+    var slug = args.shift();
+    if (!slug) return;
+
+    var src = slug;
+    var title = args.length ? args.shift() : '';
+    var alt = args.length ? args.shift() : '';
+
+    return ' <img src="' + src + '" alt="' + alt + '" title="' + title + '">';
+});
+
 hexo.extend.tag.register('video', function (args) {
     var slug = args.shift();
     if (!slug) return;
