@@ -54,3 +54,7 @@ hexo.extend.tag.register('local_test', function (args) {
 
     return ' <img src="' + src + '" alt="' + alt + '" title="' + title + '">';
 });
+
+hexo.extend.tag.register('placeholder', function (args) {
+    return ;
+});
