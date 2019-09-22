@@ -81,6 +81,5 @@
   {% include '_third-party/mathjax.swig' %}
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
-  <script type="text/javascript" src="/js/src/blocked-video.js"></script>
 </body>
 </html>

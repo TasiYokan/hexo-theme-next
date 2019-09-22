@@ -3,7 +3,7 @@ var ReplaceWithImg = function() {
     console.log("Can't access vimeo")
 
     var videoFrames = document.getElementsByName("iframe-blocked");
-    console.log("length "+videoFrames.length);
+    console.log("Tagged video count: "+videoFrames.length);
     for (var i = videoFrames.length - 1; i >= 0; i--) {
         var videoFrame = videoFrames[i];
 

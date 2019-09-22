@@ -58,3 +58,7 @@ hexo.extend.tag.register('local_test', function (args) {
 hexo.extend.tag.register('placeholder', function (args) {
     return ;
 });
+
+hexo.extend.tag.register('block_checker', function (args) {
+    return '<script type="text/javascript" src="/js/src/blocked-video.js"></script>';
+});
