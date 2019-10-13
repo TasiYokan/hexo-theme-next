@@ -14,13 +14,13 @@
         }
         else {
             // console.log("switch to en from " + switchLang.href );
-            switchLang.href = href.replace(/(^http[s]?:\/\/[a-z0-9.]*[:?0-9]*\/)(.*)/i, '$1en/$2');
+            switchLang.href = href.replace(/(^http[s]?:\/\/[a-z0-9.]*[:?0-9-]*[a-z0-9.]*\/)(.*)/i, '$1en/$2');
         }
         // console.log("href now is " + switchLang.href);
     }
 
     // Switch directly as the load may take a while
-    // swithlang();
+    swithlang();
 
     window.onmousedown = function() {
         swithlang();
