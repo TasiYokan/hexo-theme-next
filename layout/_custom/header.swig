@@ -20,7 +20,7 @@
     }
 
     // Switch directly as the load may take a while
-    swithlang();
+    // swithlang();
 
     window.onmousedown = function() {
         swithlang();
