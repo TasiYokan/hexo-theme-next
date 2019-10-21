@@ -1,9 +1,9 @@
 var ReplaceWithImg = function() {
     // The user can't access video from blocked source like vimeo youtube
-    console.log("Can't access vimeo")
+    // console.log("Can't access vimeo")
 
     var videoFrames = document.getElementsByName("iframe-blocked");
-    console.log("Tagged video count: "+videoFrames.length);
+    console.log("Blocked video(s) count: "+videoFrames.length);
     for (var i = videoFrames.length - 1; i >= 0; i--) {
         var videoFrame = videoFrames[i];
 
@@ -22,27 +22,27 @@ var ReplaceWithImg = function() {
     }
 }
 
-// Due to Cross-Origin Resource Sharing (CORS) problem, we can't use XMLHttpRequest to detect connection
-// var xhr = new XMLHttpRequest();
-// xhr.timeout = 3000;
-// xhr.responseType = "text";
-// xhr.open('GET', 'Access-Control-Allow-Origin: https://vimeo.com', true);
-// xhr.ontimeout = function (e) { 
-//     console.log("vimeo timeout!")
-//     ReplaceWithImg();
-// };
-// xhr.onerror = function (e) {
-//     console.log("vimeo error!")
-//     ReplaceWithImg();
-// }
-// xhr.send();
+// fetch('http://vimeo.com', { mode: 'no-cors' })
+//     .then(r => {
+//         console.log('You are free');
+//     })
+//     .catch(e => {
+//         console.log('You are blocked');
+//         ReplaceWithImg();
+//     });
 
 
-fetch('http://vimeo.com', { mode: 'no-cors' })
-    .then(r => {
-        console.log('You are free');
-    })
-    .catch(e => {
-        console.log('You are blocked');
+function WebLocationCheck() {
+    // Check browser's default language
+    var language = navigator.language;
+    console.log("Your browser language is ", language);
+    if (language == 'zh-CN') {
         ReplaceWithImg();
-    });
+    }
+}
+
+// window.onload = function () {
+//     WebLocationCheck();
+// }
+
+WebLocationCheck();
