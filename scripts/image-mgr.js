@@ -48,7 +48,7 @@ hexo.extend.tag.register('local_test', function (args) {
     var slug = args.shift();
     if (!slug) return;
 
-    var src = "/local_image_root/" + slug;
+    var src = "/local_test/" + slug;
     var title = args.length ? args.shift() : '';
     var alt = args.length ? args.shift() : '';
 
